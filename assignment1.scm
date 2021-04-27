@@ -4,15 +4,6 @@
             (car(cdr tree)) ; (else)if tree is a leaf, return its value.
           ))
 
-(define (inner_product vec_a vec_b) ; used in matrix multiplication
-        (if (eqv? vec_a '())
-            0
-            (+ (* (car vec_a) (car vec_b))
-               (inner_product (cdr vec_a) (cdr vec_b))
-               )
-            )
-  )
-
 (define (add_vector vec_a vec_b) ; vector + vector
         (if (eqv? (cdr vec_a) '())
             (cons (+ (car vec_a) (car vec_b)) '())
@@ -49,13 +40,10 @@
   )
 
 
-(define matrix_a '((1 2 3) (4 5 6) (7 8 9)))
-(define matrix_b '((3 9 2) (3 5 4) (7 0 9)))
+(define matrix_a '((0 1 2 3 4) (5 6 7 8 9) (1 2 3 4 5)))
+(define matrix_b '((1 2) (2 3) (4 5)(6 7) (8 9)))
 
-;(display (sum_of_scaled_rows '(1 1 1) matrix_a))
-;(display (scaler_vector (car '(2 3 4)) '(2 3 4 5)))
-;(display (add_vector '(1 2 3 3) '(1 3 2 3)))
 (display (sum '(node (node (leaf 1) (leaf 2)) (leaf 2)))) ; q1
 (display "\n")
-(display (matrix_multiplication matrix_b matrix_a)) ;q2
+(display (matrix_multiplication matrix_a matrix_b)) ;q2
 
