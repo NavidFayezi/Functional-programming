@@ -41,7 +41,7 @@
 
 
 
-(define (matrix_multiplication mat_a mat_b); mutrix multiplication
+(define (matrix_multiplication mat_a mat_b); matrix multiplication
         (if (eqv? (cdr mat_a) '())
             (cons (sum_of_scaled_rows (car mat_a) mat_b) '())
             (cons (sum_of_scaled_rows (car mat_a) mat_b) (matrix_multiplication (cdr mat_a) mat_b))
@@ -51,9 +51,11 @@
 
 (define matrix_a '((1 2 3) (4 5 6) (7 8 9)))
 (define matrix_b '((3 9 2) (3 5 4) (7 0 9)))
-(display (matrix_multiplication matrix_b matrix_a)) ;q2
+
 ;(display (sum_of_scaled_rows '(1 1 1) matrix_a))
 ;(display (scaler_vector (car '(2 3 4)) '(2 3 4 5)))
 ;(display (add_vector '(1 2 3 3) '(1 3 2 3)))
-;(display (sum '(node (node (leaf 1) (leaf 2)) (leaf 2)))) ; q1
+(display (sum '(node (node (leaf 1) (leaf 2)) (leaf 2)))) ; q1
+(display "\n")
+(display (matrix_multiplication matrix_b matrix_a)) ;q2
 
