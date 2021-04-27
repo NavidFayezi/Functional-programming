@@ -41,7 +41,7 @@
 
 
 
-(define (row_sum matrix) ; returns sum of rows
+(define (row_sum matrix) ; returns sum of elements in the same row in the given matrix.
         (define (myfunc row)
                 (if (eqv? (cdr row) '())
                    (car row)
@@ -49,6 +49,13 @@
                 )
         )
         (map myfunc matrix)
+  )
+
+(define (col_sum matrix) ; returns sum of elements in the same column in the given matrix.
+        (if (eqv? (cdr matrix) '())
+            (car matrix)
+            (add_vector (car matrix) (col_sum (cdr matrix)))
+         )
   )
 
 (define matrix_a '((0 1 2 3 4) (5 6 7 8 9) (1 2 3 4 5)))
@@ -59,5 +66,7 @@
 (display (matrix_multiplication matrix_a matrix_b)) ;q2
 (display "\n")
 (display (row_sum matrix_a)) ; q3
+(display "\n")
+(display (col_sum matrix_a)) ; q3
 
 
