@@ -33,7 +33,7 @@
   )
 
 
-;(display (scaler_vector (car '(2 3 4)) '(2 3 4 5)))
+(display (scaler_vector (car '(2 3 4)) '(2 3 4 5)))
 ;(display (add_vector '(1 2 3 3) '(1 3 2 3)))
 ;(display (sum '(node (node (leaf 1) (leaf 2)) (leaf 2)))) ; q1
 
