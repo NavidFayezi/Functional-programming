@@ -14,13 +14,7 @@
   )
 
 (define (scaler_vector scaler vec) ; scaler * vector
-        (if (eqv? (cdr vec) '())
-            (cons (* scaler (car vec)) '())
-            (cons (* scaler (car vec))
-              (scaler_vector scaler (cdr vec))
-              
-             )
-         )
+        (map (lambda (x) (* x scaler)) vec)      
   )
 
 (define (sum_of_scaled_rows vec matrix) ; sigma(vec[i] * matrix[i])
